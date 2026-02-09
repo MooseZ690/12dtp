@@ -37,6 +37,7 @@ def home():
     results = query_db(sql)
     return str(results)
 
+
 @app.route('/plane/<int:id>')
 def plane(id):
     #just one plane based on the id
@@ -44,8 +45,9 @@ def plane(id):
             SELECT * FROM Planes
             JOIN Manufacturer on Manufacturer.ManufacturerID = Planes.ManufacturerID
             WHERE Planes.PlaneID = ?;"""
-    result = query_db(sql,(id,),True)
+    result = query_db(sql, (id,), True)
     return str(result)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
