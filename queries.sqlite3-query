@@ -1,0 +1,25 @@
+-- database: ./database.db
+
+-- Use the ▷ button in the top right corner to run the entire file.
+
+-- All planes
+SELECT * FROM Planes;
+
+-- All planes and their manufacturers
+SELECT  Manufacturer.Name,Planes.Model FROM Planes
+JOIN Manufactureres ON Manufacturer.ManufacturerID = Planes.ManufacturerID;
+
+-- Planes of a specific manufacturer
+SELECT Planes.Model FROM Planes
+JOIN Manufacturer ON Manufacturer.ManufacturerID = Planes.ManufacturerID
+WHERE Manufacturer.Name="Boeing";
+
+--just the ID, Maker, Model and Image URL
+SELECT Planes.PlaneID,Manufacturer.Name,Planes.Model,Planes.ImageURL
+FROM Planes
+JOIN Manufacturer ON Manufacturer.manufacturerID=Planes.manufacturerID;
+
+--just one plane based on ID
+SELECT * FROM Planes
+JOIN Manufacturer on Manufacturer.ManufacturerID = Planes.ManufacturerID
+WHERE Planes.PlaneID = 2;
