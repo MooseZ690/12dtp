@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% body block %}
+<!-- home page goes here -->
+ <!-- a 3 column grid-->
+  <div class="three-column">
+    {% for bikes in results%}
+    <div class="w3-card-4">
+        <!-- plane model and image-->
+         <h1>{{ plane[1] }} {{ plane[2] }}</h1>
+         <img src="{{ plane[3] }}" alt="{{ bike[2] }}">
+    </div>
+    {% endfor %}
+  </div>
+ {% endblock %}

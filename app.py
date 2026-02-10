@@ -29,13 +29,13 @@ def query_db(query, args=(), one=False):
 
 @app.route("/")
 def home():
-    #home page - just the ID, Mkaer, Model and Image URL
+    #home page - just the ID, Maker, Model and Image URL
     sql = """
             SELECT Planes.PlaneID,Manufacturer.Name,Planes.Model,Planes.ImageURL
             FROM Planes
             JOIN Manufacturer ON Manufacturer.manufacturerID=Planes.manufacturerID;"""
     results = query_db(sql)
-    return render_template("layout.html")
+    return render_template("home.html", results=results)
 
 
 @app.route('/plane/<int:id>')
