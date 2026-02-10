@@ -1,14 +1,22 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: Outfit, sans-serif;}
 
+body{
+    background-color: rgb(200, 200, 200);
+}
+
 .three-column{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2em;
 }
 
+.two-column{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+}
 
 /* all images */
 img{
     width: 100%;
-
 }

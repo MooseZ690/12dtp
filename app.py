@@ -46,7 +46,17 @@ def plane(id):
             JOIN Manufacturer on Manufacturer.ManufacturerID = Planes.ManufacturerID
             WHERE Planes.PlaneID = ?;"""
     result = query_db(sql, (id,), True)
-    return str(result)
+    return render_template("plane.html", plane=result)
+
+@app.route('/manufacturer/<int:id>')
+def manufacturer(id)
+    #all planes from a specific manufacturer
+    sql = """
+    SELECT * FROM Planes
+    JOIN Manufacturer on Manufacturer.ManufacturerID = Planes.ManufacturerID
+            WHERE Planes.ManufacturerID = ?;"""
+    result = query_db(sql, (id,), True)
+    return render_template("manufacturer.html", plane=result)
 
 
 if __name__ == '__main__':
