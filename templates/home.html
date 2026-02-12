@@ -3,7 +3,7 @@
 <!-- home page goes here -->
  <!-- a 3 column grid-->
   <div class="three-column">
-    {% for planes in results%}
+    {% for planes in results %}
     <a href="{{ url_for('plane', id=planes[0]) }}">
         <div class="w3-card-4">
             <!-- plane model and image-->

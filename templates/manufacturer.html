@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="two-column">
+    {% for planes in results %}
+    <h1><b>Manufacturer: {{ planes[8] }}</b></h1>
+</div>
+{% endblock %}

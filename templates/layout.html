@@ -15,7 +15,19 @@
      </header>
     <!-- shared navbar -->
      <nav class="w3-bar w3-blue-grey">
-        <a href="/" class="'w3-bar-item w3-button">Home</a>
+        <a href="/" class="w3-bar-item w3-button">Home</a>
+        <div class="w3-dropdown-hover">
+            <button class="w3-button">Manufacturers</button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="/manufacturer/0" class="w3-bar-item w3-button">Lockheed Martin</a>
+            <a href="/manufacturer/1" class="w3-bar-item w3-button">Northrop Grumman</a>
+            <a href="/manufacturer/2" class="w3-bar-item w3-button">Mikoyan</a>
+            <a href="/manufacturer/3" class="w3-bar-item w3-button">Saab</a>
+            <a href="/manufacturer/4" class="w3-bar-item w3-button">Chengdu</a>
+            <a href="/manufacturer/5" class="w3-bar-item w3-button">Dassault</a>
+            <a href="/manufacturer/6" class="w3-bar-item w3-button">Sukhoi</a>
+            </div>
+        </div>
      </nav>
     {% block body %}
     {% endblock %}

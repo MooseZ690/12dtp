@@ -49,12 +49,12 @@ def plane(id):
     return render_template("plane.html", plane=result)
 
 @app.route('/manufacturer/<int:id>')
-def manufacturer(id)
+def manufacturer(id):
     #all planes from a specific manufacturer
     sql = """
-    SELECT * FROM Planes
-    JOIN Manufacturer on Manufacturer.ManufacturerID = Planes.ManufacturerID
-            WHERE Planes.ManufacturerID = ?;"""
+            SELECT Planes.PlaneID, Manufacturer.ManufacturerID, Manufacturer.Name, Planes.Model, Planes.ImageURL FROM Planes
+            JOIN Manufacturer ON Manufacturer.manufacturerID = Planes.manufacturerID;"""
+    
     result = query_db(sql, (id,), True)
     return render_template("manufacturer.html", plane=result)
 
