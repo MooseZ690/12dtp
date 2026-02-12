@@ -2,6 +2,8 @@
 {% block body %}
 <div class="two-column">
     {% for planes in results %}
-    <h1><b>Manufacturer: {{ planes[8] }}</b></h1>
+    <img src="{{ planes[6] }}" alt="{{ planes[2] }}">
+    <h1><b>{{ planes }}</h1>
+    {% endfor %}
 </div>
 {% endblock %}

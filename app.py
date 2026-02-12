@@ -52,11 +52,13 @@ def plane(id):
 def manufacturer(id):
     #all planes from a specific manufacturer
     sql = """
-            SELECT Planes.PlaneID, Manufacturer.ManufacturerID, Manufacturer.Name, Planes.Model, Planes.ImageURL FROM Planes
-            JOIN Manufacturer ON Manufacturer.manufacturerID = Planes.manufacturerID;"""
+            SELECT planes.*, manufacturer.name
+            FROM planes
+            JOIN manufacturer ON planes.manufacturerid = manufacturer.manufacturerid
+            WHERE manufacturer.manufacturerID = ?;"""
     
     result = query_db(sql, (id,), True)
-    return render_template("manufacturer.html", plane=result)
+    return render_template("manufacturer.html", results=result)
 
 
 if __name__ == '__main__':
