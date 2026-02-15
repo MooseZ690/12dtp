@@ -1,9 +1,20 @@
 {% extends "layout.html" %}
 {% block body %}
-<div class="two-column">
-    {% for planes in results %}
-    <img src="{{ planes[6] }}" alt="{{ planes[2] }}">
-    <h1><b>{{ planes }}</h1>
+<div class="center-text-container">
+    <h1><b>{{ results[0][7] if results else '' }}</b></h1>
+</div>
+
+<div class="three-column">
+    {% for item in results %}
+    <div>
+        <img src="{{ item[6] }}" alt="{{ item[2] }}">
+        <h2><b>{{ item[2] }}</b></h2>
+        <p>
+          Top speed: {{ item[3] }} km/h<br>
+          Cost: ${{ item[4] }}<br>
+          The {{ item[2] }} is a {{ item[5] }}
+        </p>
+    </div>
     {% endfor %}
 </div>
 {% endblock %}

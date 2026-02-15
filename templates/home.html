@@ -1,16 +1,22 @@
 {% extends "layout.html" %}
 {% block body %}
-<!-- home page goes here -->
- <!-- a 3 column grid-->
-  <div class="three-column">
+
+<div class="center-text-container">
+    <h1><b>{{ results[0][1] if results else '' }}</b></h1>
+</div>
+
+<div class="three-column">
     {% for planes in results %}
-    <a href="{{ url_for('plane', id=planes[0]) }}">
-        <div class="w3-card-4">
-            <!-- plane model and image-->
-            <h1>{{ planes[1] }} {{ planes[2] }}</h1>
+    <div>
+        <a href="{{ url_for('plane', id=planes[0]) }}">
             <img src="{{ planes[3] }}" alt="{{ planes[2] }}">
-        </div>
-    </a>
+            <h2><b>{{ planes[1] }} {{ planes[2] }}</b></h2>
+            <p>
+                Click to view details about the {{ planes[1] }} {{ planes[2] }}
+            </p>
+        </a>
+    </div>
     {% endfor %}
-  </div>
- {% endblock %}
+</div>
+
+{% endblock %}

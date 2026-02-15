@@ -57,7 +57,7 @@ def manufacturer(id):
             JOIN manufacturer ON planes.manufacturerid = manufacturer.manufacturerid
             WHERE manufacturer.manufacturerID = ?;"""
     
-    result = query_db(sql, (id,), True)
+    result = query_db(sql, (id,))
     return render_template("manufacturer.html", results=result)
 
 

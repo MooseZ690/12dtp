@@ -8,15 +8,39 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2em;
+
 }
 
+.three-column > *{
+    border: 0.15em solid black;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.three-column a{
+    text-decoration: none;
+}
+
+.three-column p{
+    padding: 1em;
+}
+
+.center-text-container {
+    text-align: center;
+}
+
+
 .two-column{
+    border: 0.3em solid black;
+    border-radius: 15px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3em;
+    margin: 1em;
 }
 
 /* all images */
 img{
     width: 100%;
+    border-radius: 15px;
 }
