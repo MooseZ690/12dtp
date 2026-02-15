@@ -1,10 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
 
-<div class="center-text-container">
-    <h1><b>{{ results[0][1] if results else '' }}</b></h1>
-</div>
-
 <div class="three-column">
     {% for planes in results %}
     <div>

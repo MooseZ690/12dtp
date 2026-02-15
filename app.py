@@ -2,7 +2,7 @@ from flask import Flask, g, render_template
 import sqlite3
 DATABASE = 'database.db'
 
-#initialize app
+# initialize app
 app = Flask(__name__)
 
 
@@ -29,34 +29,39 @@ def query_db(query, args=(), one=False):
 
 @app.route("/")
 def home():
-    #home page - just the ID, Maker, Model and Image URL
+    # home page - just the ID, Maker, Model and Image URL
     sql = """
-            SELECT Planes.PlaneID,Manufacturer.Name,Planes.Model,Planes.ImageURL
+            SELECT Planes.PlaneID,Manufacturer.Name,Planes.Model,
+            Planes.ImageURL
             FROM Planes
-            JOIN Manufacturer ON Manufacturer.manufacturerID=Planes.manufacturerID;"""
+            JOIN Manufacturer ON Manufacturer.manufacturerID
+            =Planes.manufacturerID;"""
     results = query_db(sql)
     return render_template("home.html", results=results)
 
 
 @app.route('/plane/<int:id>')
 def plane(id):
-    #just one plane based on the id
+    # just one plane based on the id
     sql = """
             SELECT * FROM Planes
-            JOIN Manufacturer on Manufacturer.ManufacturerID = Planes.ManufacturerID
+            JOIN Manufacturer on Manufacturer.ManufacturerID
+            = Planes.ManufacturerID
             WHERE Planes.PlaneID = ?;"""
     result = query_db(sql, (id,), True)
     return render_template("plane.html", plane=result)
 
+
 @app.route('/manufacturer/<int:id>')
 def manufacturer(id):
-    #all planes from a specific manufacturer
+    # all planes from a specific manufacturer
     sql = """
             SELECT planes.*, manufacturer.name
             FROM planes
-            JOIN manufacturer ON planes.manufacturerid = manufacturer.manufacturerid
+            JOIN manufacturer ON planes.manufacturerid
+            = manufacturer.manufacturerid
             WHERE manufacturer.manufacturerID = ?;"""
-    
+
     result = query_db(sql, (id,))
     return render_template("manufacturer.html", results=result)
 

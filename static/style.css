@@ -5,6 +5,7 @@ body{
 }
 
 .three-column{
+    padding-top: 2em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2em;
@@ -21,8 +22,8 @@ body{
     text-decoration: none;
 }
 
-.three-column p{
-    padding: 1em;
+.three-column p, h2{
+    padding-left: 10px;
 }
 
 .center-text-container {
