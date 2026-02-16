@@ -56,7 +56,7 @@ def plane(id):
 def manufacturer(id):
     # all planes from a specific manufacturer
     sql = """
-            SELECT planes.*, manufacturer.name
+            SELECT planes.*, manufacturer.name, manufacturer.imageurl
             FROM planes
             JOIN manufacturer ON planes.manufacturerid
             = manufacturer.manufacturerid

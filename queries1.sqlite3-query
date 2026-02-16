@@ -1,0 +1,49 @@
+-- database: ./database.db
+
+-- Use the ▷ button in the top right corner to run the entire file.
+
+SELECT * FROM Planes;
+INSERT INTO Planes (PlaneID, ManufacturerID, Model, Topspeed, Cost, Description)
+VALUES
+-- Lockheed Martin (0)
+(8, 0, 'F-16 Fighting Falcon', '2414', '18000000',
+ 'American multirole fighter aircraft designed for air superiority and ground attack missions, widely exported to allied nations and known for its agility, advanced avionics systems, and cost-effective operational performance in modern combat scenarios.'),
+
+(9, 0, 'F-117 Nighthawk', '993', '42000000',
+ 'Stealth ground-attack aircraft developed using pioneering low-observable technology, designed to penetrate heavily defended airspace at night and deliver precision-guided munitions with minimal radar detection during high-risk strategic operations.'),
+
+-- Northrop Grumman (1)
+(10, 1, 'F-14 Tomcat', '2485', '38000000',
+ 'Twin-engine fleet defense interceptor developed for carrier operations, featuring variable-sweep wings, long-range radar systems, and powerful engines that allowed it to dominate air-to-air engagements and protect naval strike groups.'),
+
+(11, 1, 'YF-23 Black Widow II', '2775', '100000000',
+ 'Prototype stealth fighter developed for the Advanced Tactical Fighter program, incorporating cutting-edge stealth shaping, supercruise capability, and advanced avionics, though ultimately losing the competition despite exceptional performance characteristics.'),
+
+-- Mikoyan (2)
+(12, 2, 'MiG-31 Foxhound', '3000', '33000000',
+ 'Supersonic interceptor aircraft designed for high-altitude, high-speed operations, equipped with powerful radar capable of tracking multiple targets simultaneously and defending vast airspace regions against strategic bombers and cruise missiles.'),
+
+(13, 2, 'MiG-35', '2400', '50000000',
+ 'Advanced multirole fighter representing a modernization of the MiG-29 platform, featuring improved radar systems, enhanced maneuverability, expanded weapons compatibility, and upgraded avionics for modern air combat environments.'),
+
+-- Saab (3)
+(14, 3, 'JAS 39 Gripen C', '2200', '60000000',
+ 'Swedish lightweight multirole fighter engineered for flexibility and low operating costs, capable of short runway operations, rapid turnaround servicing, and integration with modern NATO-compatible weapons and communication systems.'),
+
+-- Chengdu (4)
+(15, 4, 'J-7', '2175', '15000000',
+ 'Chinese fighter aircraft derived from the MiG-21 design, widely produced and exported, serving primarily as an interceptor and light fighter with simple systems and reliable supersonic performance.'),
+
+(16, 4, 'FC-1 Xiaolong', '1910', '25000000',
+ 'Lightweight multirole combat aircraft developed jointly with Pakistan, designed to provide affordable air defense and strike capabilities with modern avionics, beyond-visual-range missile support, and cost-efficient maintenance requirements.'),
+
+-- Dassault (5)
+(17, 5, 'Mirage F1', '2340', '15000000',
+ 'French fighter and attack aircraft developed as a successor to the Mirage III, featuring swept wings instead of a delta configuration, improved ground-attack capabilities, and extensive export service across multiple continents.'),
+
+-- Sukhoi (6)
+(18, 6, 'Su-30', '2120', '50000000',
+ 'Twin-engine multirole fighter derived from the Su-27 platform, equipped with thrust-vectoring engines in some variants, long operational range, and advanced radar systems enabling both air superiority and strike missions.'),
+
+(19, 6, 'Su-34', '1900', '36000000',
+ 'Russian fighter-bomber aircraft designed for deep strike missions, featuring side-by-side seating for crew members, armored cockpit protection, extended combat radius, and the ability to deliver precision-guided munitions in contested airspace.');

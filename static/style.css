@@ -15,7 +15,6 @@ body{
 .three-column > *{
     border: 0.15em solid black;
     border-radius: 15px;
-    box-sizing: border-box;
 }
 
 .three-column a{
@@ -38,6 +37,10 @@ body{
     grid-template-columns: 1fr 1fr;
     gap: 3em;
     margin: 1em;
+}
+
+.two-column p{
+    font-size: 1.2em;
 }
 
 /* all images */
